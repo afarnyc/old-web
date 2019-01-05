@@ -1,0 +1,366 @@
+// articles ///////////////////////////////////////
+.info {
+	padding: 0 1.5rem;
+	text-align: center;	
+	color: $charcoal;
+	font-size: $font-base-size*0.87;
+	margin-bottom: 50px;
+} // info
+
+.content-paragraph {
+	margin: 20px 0;
+} // content-paragraph
+
+
+// blurb styles /////////////////////////////////
+.blurb-first {
+	margin-top: 0% !important;
+}
+
+.blurb {
+	width: 100%;
+	padding: 2%;
+	margin: 1.5% auto;
+	background: lighten(#ffcb99, 19);
+	font-size: $font-base-size*0.87;
+	@include single-transition(all,0.2s,ease-in-out);
+
+	.blurb-header {
+		width: 100%;
+		color: lighten($mediumpurple,18);
+		overflow: auto;
+		padding-bottom: 0.5%;
+
+	} // blurb-header
+
+	.blurb-title {
+		@include susy-breakpoint($medium) {
+			float: left;
+		}
+	} // blurb-title
+
+	.blurb-date {
+		@include susy-breakpoint($medium) {
+			float: right;
+		}
+	} // blurb-date
+
+	.blurb-text {
+		color: $charcoal;
+		padding-top: 1%;
+		border-top: dotted 1px lighten($mediumpurple,18);
+		display: table;
+
+		.blurb-photo {
+			display: block;
+			margin: 1.5% auto;
+		} // blurb-photo
+	} // blurb-text
+
+	&:hover {
+		border-left: solid 5px $mediumaqua; 
+		background: lighten(#ffcb99, 16);
+	} // hover
+
+	&:hover .blurb-text {
+		border-top: dotted 1px $mediumaqua;
+	} // hover
+
+	&:hover .blurb-header {
+		color: $mediumaqua;
+	} // hover
+} // blurb
+
+
+// buttons //////////////////////////////////////
+.cta-full {
+	width: 175px;
+	text-align: center;
+	margin: auto;
+	display: block;
+	outline: none;
+	border: none;
+	@include border-radius($default-border-radius);
+	padding: 10px 15px;
+	background: $mediumaqua;
+	color: #fff;
+	font-family: $font-secondary;
+	@include single-transition(all,0.4s,ease-in-out);
+
+	&:hover {
+		background: $mediumpurple;
+	}
+} // cta-full
+
+.cta-ghost {
+	width: 200px;
+	text-align: center;
+	margin: 35px auto;
+	display: block;
+	outline: none;
+	border: 4px $mediumaqua solid;
+	color: $mediumaqua;
+	padding: 10px 15px;
+	background: transparent;
+	text-transform: uppercase;
+	font-weight: 500;
+	@include single-transition(all,0.4s,ease-in-out);
+
+	&:hover {
+		border-color: $mediumpurple;
+		color: $mediumpurple;
+	}
+} // cta-ghost
+
+.cta-ghost-homepage {
+	width: 200px;
+	text-align: center;
+	margin: 35px auto;
+	display: block;
+	outline: none;
+	border: 4px $mediumpurple solid;
+	color: $mediumpurple;
+	padding: 10px 15px;
+	background: transparent;
+	text-transform: uppercase;
+	font-weight: 500;
+	@include single-transition(all,0.4s,ease-in-out);
+	
+	&:hover {
+		border-color: $mediumaqua;
+		color: $mediumaqua;
+	} // hover
+} // cta-ghost-homepage
+
+.ghost-hero {
+	margin: auto;
+	color: #fff;
+	border-color: #fff;
+	padding: 5px 7.5px !important;
+	@include single-text-shadow(1px,1px,5px,15px,#000);
+
+	@include susy-breakpoint($small){
+		padding: 10px 15px !important;
+	} // susy-breakpoint(small)
+
+	@include susy-breakpoint(max-width $medium+1) {
+		width: 150px !important;
+	} // susy-breakpoint(max-width medium+1)
+
+	&:hover {
+		color: #fff;
+		border-color: #fff;
+	} // hover
+} // ghost-hero
+
+.sm-width {
+	width: 150px;
+} // sm-width
+
+.lg-width {
+	width: 250px;
+} // lg-width
+
+.xl-width {
+	width: 300px;
+} // xl-width
+
+.xxl-width {
+	width: 350px;
+} // xxl-width
+
+.button-container {
+	padding: 0 3.5% !important;
+} // button-container
+
+
+// h2 //////////////////////////////////////////////////
+.info-title {
+  text-align: center;
+  margin: 30px 0 -3px 0;
+  @include single-transition(all, .4s, ease-in-out);
+}
+
+
+// image holders ///////////////////////////////////////
+.img-circle-200 {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 35px auto;
+  @include border-radius($default-border-radius*20);
+  @include single-transition(all,0.4s,ease-in-out);
+  border: 5px solid $lightaqua;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25); 
+} // img-circle-100
+
+.circle-350 {
+	width: 350px !important;
+	height: 350px !important;
+	@include border-radius(175px);
+} // circle-350
+
+.d-lentol {
+	background: image-url("photos/d-lentol.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.j-fonseca {
+	background: image-url("photos/j-fonseca.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.c-bressler {
+	background: image-url("photos/c-bressler.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.d-herman {
+	background: image-url("photos/d-herman.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.r-oravec {
+	background: image-url("photos/r-oravec.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.k-smith {
+	background: image-url("photos/no-pic.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.a-lockard-lewis {
+	background: image-url("photos/a-lockard-lewis.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.j-h-lee {
+	background: image-url("photos/j-h-lee.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.h-gintell {
+	background: image-url("photos/h-gintell.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.a-soriano {
+	background: image-url("photos/no-pic.jpg") center center no-repeat;
+	background-size: contain;
+}
+
+.vets-pets-intro {
+	background: image-url("photos/vets-pets-0.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.broadway-beds-intro {
+	background: image-url("photos/broadway-beds-1.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.volunteer-pic {
+	background: image-url("photos/volunteer.jpg") center center no-repeat !important;
+	background-size: 460px 345px !important;
+}
+
+.whatwedo-pic {
+	background: image-url("photos/whatwedo.jpg") 50px center no-repeat !important;
+	background-size: 350px 288px !important;
+}
+
+.j-bartlett-0 {
+	background: image-url("photos/j-bartlett-0.jpg") center center no-repeat !important;
+	background-size: contain;
+	height: 320px;
+	width: 200px;
+}
+
+.j-bartlett-1 {
+	background: image-url("photos/j-bartlett-1.jpg") center center no-repeat !important;
+	background-size: contain;
+	height: 320px;
+	width: 200px;
+}
+
+// links (anchor tags) /////////////////////////////////
+.link-regular {
+	color: $mediumaqua;
+	@include single-transition(all,0.4s,ease-in-out);
+	
+	&:hover {
+		color: $lightpurpletwo;
+		border-bottom: 1px $lightpurpletwo dotted;
+	} // hover
+} // link-regular
+
+
+// span styles ////////////////////////////////////////
+.underline {
+	border-bottom: 1px $mediumpurple dotted;
+}
+
+#timer {
+	color: $mediumpurple;
+}
+
+
+// video (YouTube) /////////////////////////////////////
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+    margin: 50px 0;
+
+    iframe, object, embed {
+    	position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+    } // iframe, object, embed
+} // video-container
+
+
+// logo styles ////////////////////////////////////////
+.vets-pets {
+	background: image-url("logos/vp/vetspets-logo-official.png") center center no-repeat;
+	background-size: contain;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+	opacity: 0.75;
+	@include single-transition(0.4s,ease-in-out);
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.vp-alt {
+	margin: auto auto 15px auto !important;
+	opacity: 1;
+}
+
+.broadway-beds {
+	background: image-url("logos/bb/bb-logo-official.png") center center no-repeat;
+	background-size: contain;
+	height: 156px;
+	width: 250px;
+	margin: 30px auto 50px auto;
+	opacity: 0.75;
+	@include single-transition(0.4s,ease-in-out);
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.bb-alt {
+	margin: auto auto 15px auto !important;
+	opacity: 1;
+}
+

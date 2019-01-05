@@ -1,0 +1,26 @@
+<?php 
+ini_set('display_errors',1);  
+error_reporting(E_ALL); 
+?>
+<!DOCTYPE html>
+<html lang="en" dir="LTR">
+<head>
+	{{ partial("head") }}
+	<meta name="description" content ="500 Error Internal Server">
+	<title>500 Error - Internal Server</title>
+</head>
+<body>
+	<section class="layout error-container">
+		<div class="error-img">
+			<img src="http://afarnyc.org/img/photos/lab-puppy.jpg" alt="403 Error" class="error-display">
+		</div>
+		<div class="error-message">
+			<p class="error-title">Oops!</p>
+			<p>
+				There seems to be a problem with this page, but this puppy will entertain you in the meantime! Come back before the puppy gets anxious and starts chewing your wires, shoes, phone...
+			</p>
+			<a href="/" class="cta-ghost">Return Home</a>
+		</div>
+	</section><!-- layout -->
+</body>
+</html>

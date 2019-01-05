@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+
+   ## Remove filename extensions from url
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+   
+   ## Block access to public directories other than index
+   Options -Indexes
+
+   ## Prevent hotlinking, allow whitelisted domains below
+   # RewriteCond %{HTTP_REFERER} !^$
+   # RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?afarnyc.org [NC]
+   # RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?blog.afarnyc.org [NC]
+   # RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?localhost:8888 [NC]
+   # RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
+
+   ## Redirect from www to non-www address
+   RewriteCond %{HTTP_HOST} ^www.afarnyc.org [NC]
+   RewriteRule ^(.*)$ http://afarnyc.org/$1 [L,R=301]
+   RewriteCond %{HTTP_HOST} ^www\.blog.afarnyc\.org [NC]
+   RewriteRule ^(.*)$ http://blog.afarnyc.org/$1 [L,R=301]
+
+   ## Error pages
+   ErrorDocument 404 /fourohfour
+   ErrorDocument 403 /fourohthree
+   ErrorDocument 500 /fivehundred
+   ErrorDocument 401 /fourohone
+</IfModule>

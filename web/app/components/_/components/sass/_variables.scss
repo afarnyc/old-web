@@ -1,0 +1,29 @@
+@include font-face("Trattatello",font-files("http://afarnyc.org/fonts/Trattatello.ttf"));
+
+// colors ////////////////////////
+$charcoal                    : #444646;
+$mediumaqua                  : #369ff4;
+$lightaqua                   : #99d6ff;
+$darkpurplealt               : #382a3a;
+$darkpurple					 : #634A66;
+$mediumpurple                : #553f58;
+$lightpurpleone              : #b095ff;
+$lightpurpletwo              : #c099ff;
+$darkkhaki                   : #61604a;
+$mediumkhaki                 : #878a6c;
+$lightkhaki                  : #b0b29e;
+$lightorange                 : #ffcb99;
+
+
+// font settings //////////////////
+$font-primary                : "Quattrocento Sans", sans-serif;
+$font-secondary              : "Nunito", sans-serif;
+$font-navigation             : "Helvetica Neue", Arial, sans-serif;
+$font-logo					 : "Trattatello", cursive;
+$font-base-size              : 1.1rem;
+$font-base-weight            : normal;
+$font-base-lineheight        : 1.6;
+
+
+// border settings ///////////////
+$default-border-radius       : 5px;

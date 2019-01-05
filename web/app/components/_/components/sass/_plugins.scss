@@ -1,0 +1,353 @@
+// slideout.js //////////////////////////////////
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.slideout-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 9999;
+	width: 256px;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	display: none;
+	background: $darkpurple;
+} // slideout-menu
+
+.slideout-panel {
+	position:relative;
+	z-index: 1;
+} // slideout-panel
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+	overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+	display: block;
+}
+
+.nav-mobile {
+	width: 100%;
+	padding: 5px 15px;
+	top: 0;
+	z-index: 9998;
+	background: rgba(255,255,255,0.8);
+	color: lighten($mediumpurple,15);
+	overflow: auto;
+	display: block;
+	position: fixed;
+	/* @include single-transition(all,0.2s,ease-in); */
+
+	@include susy-breakpoint(728px) {
+		display: none;
+	} // susy-breakpoint(728px)
+} // nav-mobile
+
+.nav-mobile-stick {
+	position: absolute !important;
+}
+
+.toggle-button {
+	cursor: pointer;
+	width: 46px;
+	float: left;
+	padding-top: 5px;
+	@include single-transition(all,0.25s,ease-in-out);
+
+	&:hover {
+		color: $mediumaqua;
+	} // hover
+} // toggle-button
+
+.logo-nav, .logo-nav-home {
+	cursor: pointer;
+	width: auto;
+	float: right;
+	font-family: $font-logo;
+	font-size: $font-base-size*1.5;
+	letter-spacing: 3px;
+	width: 45px;
+	height: 45px;
+	background: image-url("logos/afar-logo-square.png") center center no-repeat;
+	background-size: contain;
+
+	&:hover {
+		opacity: 0.65;
+	} // hover
+} // logo-nav-home, logo-nav-home
+
+.logo-nav {
+	@include single-transition(all,0.3s,ease-in-out);
+} // logo-nav
+
+.logo-nav-home {
+	display: none;
+} // logo-nav-home
+
+.menu-section {
+	border-bottom: 1px lighten($darkpurple, 8) solid;
+	border-top: 1px darken($darkpurple, 5) solid;
+	@include single-transition(all,0.3s,ease-in-out);
+
+	h3, a {
+		color: #fff;
+	} // h2, a
+
+	&:hover {
+		background: $mediumaqua;
+		border-color: $mediumaqua;
+	}
+} // menu-section
+
+.menu-section-title {
+	font-size: $font-base-size;
+	letter-spacing: 0.5px;
+	margin-left: 25px;
+} // menu-section-title
+
+.menu-section-list {
+	background: lighten($darkpurple,50);
+	margin: 0;
+	padding-left: 0;
+
+	li {
+		padding: 15px 0px 15px 55px;
+		@include single-transition(all,0.3s,ease-in-out);
+
+		&:hover{
+			background: lighten($lightaqua,7);
+		} //hover
+	} // li
+
+	a {
+		color: darken($darkpurple,10);
+		display: block;
+	} // a
+} // menu-section-list
+
+
+// Ghost blog ////////////////////////////////////
+// homepage banner 
+.banner-homepage:after {
+	opacity: 0 !important;
+}
+
+// homepage social-media icons
+.sf-social li a i {
+	color: #fff;
+}
+
+.sf-social li {
+	border-color: $darkpurple;
+	background-color: $darkpurple;
+
+	&:hover {
+		border-color: $mediumaqua;
+		background-color: $mediumaqua;
+	} // hover
+
+	&:hover a i {
+		color: #fff;
+	} // hover
+}
+
+// navigation
+.nav-main ul li a {
+	text-decoration: none !important;
+}
+
+#menu a {
+	text-decoration: none !important;
+}
+
+// banner common
+.banner {
+	background-color: $mediumaqua;
+	background: image-url("http://afarnyc.org/img/backgrounds/animal-collage-bg-dark-aqua.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.banner-author, .banner-error, .banner-tag {
+	/* &:after {
+		opacity: 0.9 !important;
+	} */
+}
+
+.banner-page {
+
+}
+
+.banner-post {
+	hr {
+    border-style: none !important;
+    height: 2px;
+    border: 0;
+    width: 60px;
+    background: #fff;
+    color: #fff;
+    margin: 30px auto 0px auto;
+    text-align: center;
+  } // hr
+}
+
+// banner common text
+.welcome-text, .welcome-text h1, .welcome-text h3 {
+	/* color: $charcoal !important;
+	border-color: $charcoal !important; */
+}
+
+.welcome-text .post-tags {
+	/* color: lighten($charcoal,5) !important;
+
+	& a:hover {
+		color: $mediumaqua !important;
+	} // hover */
+}
+
+.welcome-text {
+	border-bottom: none !important;
+	border-top: none !important;
+}
+
+// sidebar widgets
+.widget .sf-search-widget .form-group .search-keyword-widget {
+	max-width: 186px !important;
+}
+
+.widget .sf-search-widget .form-group .sf-widget-search-icon {
+	right: -9px;
+}
+
+.sidebar .sidebar-wrap .widget .widget-title {
+	color: $charcoal !important;
+}
+
+.widget .sf-search-widget .form-group {
+	left: -8px !important;
+}
+
+.search-widget .widget-title {
+	margin-bottom: -10px !important;
+}
+
+.widget-title {
+	margin-bottom: 0.5rem !important;
+	margin-top: -10px !important;
+} 
+
+// main content 
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5 {
+	color: $charcoal !important;
+	margin-bottom: -25px;
+} 
+
+.post-content .post-author-content h4 {
+	margin-bottom: 0;
+}
+
+.post-content .post-author-content pre, .post-content .post-author-content p {
+	margin: 1rem !important;
+}
+
+.post-list .post.featured:before {
+	top: -1px;
+	right: 12px;
+}
+
+.post-list .post.featured.has-thumb:before {
+	color: #fff;
+}
+
+.post-list .post.featured.has-thumb:after {
+	border-color: transparent $mediumaqua;
+}
+
+.post-content p a, .post-content a {
+	color: $mediumaqua !important;
+	border-bottom: none !important;
+	text-decoration: none !important;
+
+	&:hover {
+		color: $lightpurpletwo !important;
+		border-bottom: 1px $lightpurpletwo dotted !important;
+	} // hover
+
+}
+
+.sf-tags.stack:hover .count {
+	color: #fff !important;
+}
+
+
+// author blurb
+footer.post-footer {
+	color: $charcoal !important;
+	background-color: lighten(#e2e7ea, 3) !important;
+} 
+
+.author-name a {
+	color: $charcoal !important;
+}
+
+.author-info a {
+	color: $charcoal !important;
+}
+
+// remove border-radius 
+.post-content, .sidebar .sidebar-wrap, .post-list .post .post-inner{
+	@include border-radius(0px);
+}
+
+// change background color
+.body-wrap {
+	background-color: #fff/* lighten($mediumpurple,25) */;
+}
+
+// remove underline from footer links, on hover
+footer a {
+	&:hover {
+		border: none !important;
+		text-decoration: none !important;
+	} // hover
+} // footer a
+
+// button hover styles
+.bottom-meta a, .bottom-meta span, .pagination-wrap a {
+	&:hover {
+		background-color: $darkpurple !important;
+		border-color: $darkpurple !important;
+		color: #fff !important;
+	}
+}
+
+.bottom-meta .share .sharebox, .bottom-meta .share .full-color {
+	&:hover {
+		border-color: transparent !important;
+		background-color: transparent !important;
+	}
+}
+
+.sf-tags:hover span:last-of-type {
+	background-color: $darkpurple !important;
+
+}
+
+.next-prev-posts a.next, .next-prev-posts a.prev {
+	border: none;
+	
+	&:hover {
+		border: none;
+	}
+}
+
+// comments (disqus thread)
+#disqus_thread a {
+	color: #777 !important;
+}
